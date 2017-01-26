@@ -11,6 +11,7 @@ class BarChart extends Component {
     round: PropTypes.func,
     alwaysUseRounding: PropTypes.bool,
     x: PropTypes.func,
+    xUnit: PropTypes.func,
     renderHorizontalGridLines: PropTypes.bool,
     filterPrinter: PropTypes.func
   };
@@ -20,7 +21,7 @@ class BarChart extends Component {
     const helper = this.props.chartHelper(this, chart);
     helper.setProperties('elasticY', 'centerBar', 'gap', 'round',
                          'alwaysUseRounding', 'x', 'renderHorizontalGridLines',
-                         'filterPrinter');
+                         'filterPrinter', 'xUnit');
 
     chart.render();
   };
