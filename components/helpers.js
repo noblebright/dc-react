@@ -10,11 +10,20 @@ class ChartPropertyHelper {
 
   setProperties(...keys) {
     for (let key of keys) {
-      this.setProperty(key);
+      if(key === 'on') {
+        setEvents();
+      } else {
+        this.setProperty(key);
+      }
     }
     return this;
   }
 
+  setEvents() {
+    for(let event of this.props.on) {
+      this.chart.on(event, this.props.on[event]);
+    }
+  }
   setContextProperties(...keys) {
     for (let key of keys) {
       this.setContextProperty(key);

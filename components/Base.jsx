@@ -23,7 +23,7 @@ export let Base = DCComponent => class extends Component {
   dcHelper = (dcComponent, dcChart, loadDefault = true) => {
     let helper = new ChartPropertyHelper(dcComponent, dcChart);
     if (loadDefault) {
-      helper.setProperties('width', 'height', 'title', 'label',
+      helper.setProperties('width', 'height', 'title', 'label', 'on',
                            'transitionDuration', 'margins', 'mouseZoomable',
                            'legend')
             .setContextProperties('dimension', 'group');
